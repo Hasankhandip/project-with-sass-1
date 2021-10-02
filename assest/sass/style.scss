@@ -1,0 +1,527 @@
+// all scss link up start
+@import "./variable";
+@import "./mixin";
+@import "./extend";
+@import "./reset";
+@import "./global";
+@import "./color";
+@import "./typoghraphy";
+//all scss link up end
+// header-section scss start
+.header-section {
+  background-color: $main-bg;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: auto;
+  z-index: 11;
+  .header-logo {
+    display: flex;
+    height: 100%;
+    align-items: center;
+    .hdr-logo {
+      @include hdr-logo;
+      .hdr-dot {
+        @include hdr-dot;
+      }
+    }
+  }
+  .hdr-nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    .nav-item {
+      position: relative;
+      color: $main-color !important;
+      display: block;
+      padding: 33px 20px;
+      font-size: 16px;
+      font-family: $p-font;
+    }
+    .nav-item:hover::after {
+      opacity: 1;
+      visibility: visible;
+      width: 106%;
+      transition: $transition-4;
+    }
+    .nav-item::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 0;
+      height: 3px;
+      background-color: $secondery-color;
+      transition: $transition-4;
+    }
+    .active-nav {
+      position: relative;
+    }
+    .active-nav::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 106%;
+      height: 3px;
+      background-color: $secondery-color;
+    }
+  }
+}
+// header-section scss end
+
+// banner-section scss start
+.banner-section {
+  background-color: $main-bg;
+  padding: 215px 0 125px 0;
+  .banner-left {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    flex-direction: column;
+    .banner-title {
+      font-family: $main-font;
+      font-size: 25px;
+      color: $secondery-color;
+    }
+    .banner-my-name {
+      font-family: $main-font;
+      text-transform: uppercase;
+      color: $white;
+      font-size: 60px;
+      line-height: 1;
+      margin: 15px 0;
+    }
+    .banner-into {
+      font-family: $p-font;
+      color: #b1b1b1;
+      font-size: 15px;
+    }
+    .banner-into span {
+      color: $white;
+      margin-left: 5px;
+    }
+    .main-button {
+      margin: 35px 0;
+    }
+    .banner-social {
+      .social-link i {
+        color: $white;
+        width: 35px;
+        height: 35px;
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: 1px solid $white;
+        transition: $transition-4;
+        font-size: 15px;
+      }
+      .social-link:hover i {
+        color: $secondery-color;
+        border: 1px solid $secondery-color;
+        transition: $transition-4;
+      }
+    }
+  }
+  .banner-right {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    flex-direction: column;
+    .banner-img {
+      max-width: 100%;
+    }
+  }
+}
+
+//banner-section scss end
+
+// about-section scss start
+.about-section {
+  @include main-bgc;
+  .section-title {
+    margin-bottom: 60px;
+    .section-title-name {
+      @include section-title-name;
+    }
+  }
+  .about-all {
+    .about-left {
+      .about-img {
+        max-width: 100%;
+      }
+    }
+    .about-right {
+      height: 100%;
+      display: flex;
+      flex-wrap: wrap;
+      flex-direction: column;
+      justify-content: center;
+      .banner-title {
+        @include banner-title;
+        font-size: 30px;
+      }
+      .about-into {
+        margin: 15px 0;
+        @include p-font;
+        color: #b1b1b1;
+        font-size: 15px;
+        span {
+          color: $white;
+        }
+      }
+      .about-details {
+        margin: 15px 0;
+        .ab-details {
+          color: #b1b1b1;
+          font-size: 15px;
+          margin-bottom: 5px;
+          span {
+            color: $white;
+          }
+        }
+      }
+      .main-button {
+        margin: 20px 0;
+      }
+    }
+  }
+}
+// about-section scss end
+
+//service-section scss start
+.service-section {
+  @include main-bgc;
+  .section-title {
+    margin-bottom: 60px;
+  }
+  .service-all {
+    .service-item {
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      margin-bottom: 40px;
+      .service-item-overlay {
+        padding: 40px 30px;
+        background: linear-gradient(60deg, #096e44, rgba(0, 0, 0, 0.4));
+      }
+      .service-icon {
+        margin: 15px 0;
+        i {
+          font-size: 50px;
+          color: $white;
+        }
+      }
+      .service-name {
+        margin: 15px 0;
+        font-family: $h-font;
+        color: $white;
+        font-size: 37px;
+      }
+      .service-details {
+        margin: 15px 0;
+        font-family: $p-font;
+        color: $white;
+        font-size: 15px;
+      }
+      .service-item-overlay-2nd {
+        background: linear-gradient(60deg, #006488, rgba(0, 0, 0, 0.4));
+      }
+      .service-item-overlay-3rd {
+        background: linear-gradient(60deg, #cca000, rgba(0, 0, 0, 0.4));
+      }
+      .service-item-overlay-4th {
+        background: linear-gradient(60deg, #bb24c0, rgba(0, 0, 0, 0.4));
+      }
+    }
+  }
+}
+//service-section scss end
+
+// portfolio-section scss start
+.portfolio-section {
+  @include main-bgc;
+  .section-title {
+    margin-bottom: 60px;
+  }
+  .portfolio-type {
+    text-align: center;
+    margin-bottom: 60px;
+    .portfolio-type-name {
+      font-size: 15px;
+      font-family: $p-font;
+      color: #b1b1b1;
+      transition: $transition-4;
+      &:hover {
+        color: $white;
+        transition: $transition-4;
+      }
+    }
+    .active-ptn {
+      position: relative;
+      color: $white;
+      &::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: -5px;
+        width: 100%;
+        height: 2px;
+        background-color: $secondery-color;
+      }
+    }
+  }
+  .portfolio-all {
+    margin-bottom: 15px;
+    .portfolio-item {
+      position: relative;
+      &:hover .hover-portfolio-contecnt {
+        opacity: 0.9;
+        visibility: visible;
+        transition: $transition-4;
+        height: 100%;
+      }
+      .portfolio-img {
+        max-width: 100%;
+      }
+      .small-img {
+        width: auto;
+        height: 260px;
+      }
+      .hover-portfolio-contecnt {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        height: 85%;
+        background: $secondery-color;
+        opacity: 0;
+        visibility: hidden;
+        transition: $transition-4;
+        .hover-content-inner {
+          text-align: center;
+          .theme-name {
+            font-family: $main-font;
+            color: $white;
+            font-size: 30px;
+          }
+          .theme-view {
+            color: $white;
+            font-family: $p-font;
+            font-size: 15px;
+            &:hover {
+              text-decoration: underline;
+            }
+          }
+        }
+      }
+    }
+    .small-portfolio-start {
+      display: flex;
+      height: 100%;
+      align-items: center;
+    }
+    .small-portfolio-item {
+      margin-bottom: 25px;
+    }
+  }
+}
+// portfolio-section scss end
+
+// experience-section scss start
+.experience-section {
+  background-color: $main-bg;
+  .section-title {
+    margin-bottom: 60px;
+  }
+  .experience-item {
+    padding: 50px 35px;
+    border: 1px solid #494949;
+    transition: $transition-4;
+    &:hover {
+      background-color: $secondery-color;
+      border: 1px solid $secondery-color;
+      transition: $transition-4;
+      .experience-date,
+      .experience-name,
+      .experience-details {
+        color: $white;
+        transition: $transition-4;
+      }
+    }
+    .experience-date {
+      color: #b1b1b1;
+      font-family: $p-font;
+      font-size: 15px;
+      margin: 10px 0;
+      transition: $transition-4;
+    }
+    .experience-name {
+      color: #b1b1b1;
+      font-family: $h-font;
+      font-size: 25px;
+      font-weight: 500;
+      transition: $transition-4;
+    }
+    .experience-details {
+      color: #b1b1b1;
+      font-size: 16px;
+      font-weight: 500;
+      margin-top: 30px;
+      transition: $transition-4;
+    }
+  }
+}
+// experience-section scss end
+
+// project-offer-section scss start
+.project-offer-section {
+  background-color: $main-bg;
+  .project-offer-all {
+    padding: 20px 0;
+    .section-title {
+      margin-bottom: 60px;
+    }
+    .hire-btn {
+      font-size: 20px;
+      background: none;
+      padding: 12px 35px;
+      border: 1px solid #10975f;
+      &:hover {
+        background-color: $secondery-color !important;
+      }
+    }
+  }
+}
+// project-offer-section scss end
+
+// contact-section scss start
+.contact-section {
+  background-color: $main-bg;
+  .section-title {
+    margin-bottom: 60px;
+  }
+  .contact-all {
+    padding-top: 20px;
+    .contact-title {
+      font-family: $main-font;
+      font-size: 25px;
+      color: #10975f;
+      margin-bottom: 40px;
+    }
+    .contact-info-item {
+      font-family: $p-font;
+      color: $white;
+      font-size: 15px;
+      line-height: 1.8;
+      margin: 25px 0;
+      display: flex;
+      align-items: center;
+      i {
+        font-size: 25px;
+        color: $secondery-color;
+        margin-right: 20px;
+      }
+    }
+    .contact-form {
+      .form-group {
+        margin-bottom: 30px;
+        .form-name {
+          font-size: 15px;
+          font-family: $p-font;
+          color: $white;
+          text-transform: uppercase;
+          margin-bottom: 15px;
+        }
+        .contact-name {
+          font-family: $p-font;
+          background-color: $main-bg;
+          color: $white;
+          border: 1px solid #494949;
+          transition: $transition-3;
+          border-radius: 0;
+          font-size: 15px;
+          padding: 10px 20px;
+          &:focus {
+            border: 1px solid $secondery-color;
+            color: $white;
+            outline: none;
+            box-shadow: none;
+            transition: $transition-3;
+          }
+          &:focus::placeholder {
+            color: $white;
+          }
+        }
+      }
+      .submit-button {
+        margin-top: 10px;
+      }
+    }
+  }
+}
+// contact-section scss end
+
+// footer-section scss start
+.footer-section {
+  background-color: $main-bg;
+  .header-logo {
+    .hdr-logo {
+      @include hdr-logo;
+      font-size: 35px;
+      .hdr-dot {
+        @include hdr-dot;
+      }
+    }
+  }
+  .footer-message {
+    font-family: $p-font;
+    font-size: 15px;
+    color: #b1b1b1;
+    text-align: center;
+    margin: 30px 200px 50px 200px;
+  }
+  .banner-social {
+    .social-link i {
+      color: $white;
+      width: 35px;
+      height: 35px;
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border: 1px solid $white;
+      transition: $transition-4;
+      font-size: 15px;
+    }
+    .social-link:hover i {
+      color: $secondery-color;
+      border: 1px solid $secondery-color;
+      transition: $transition-4;
+    }
+  }
+}
+.footer-copyright {
+  border-top: 1px solid #6161615d;
+  background-color: $main-bg;
+  padding: 30px 0;
+  .footer-copyright-name {
+    font-family: $h-font;
+    font-size: 14px;
+    text-align: center;
+    color: #b1b1b1;
+    margin-bottom: 5px;
+    .account-name {
+      color: $secondery-color;
+    }
+  }
+}
+// footer-section scss end
